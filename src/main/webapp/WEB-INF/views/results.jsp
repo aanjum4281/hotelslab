@@ -10,10 +10,10 @@
 <body>
 <h1>HERE ARE YOUR RESULTS</h1>
 
-
+<c:foreach>
+            <p> ${hotels}</p>
             
-            
-
+</c:foreach>
 
 
 </body>

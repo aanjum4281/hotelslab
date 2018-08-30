@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.grandcircus.hotelslab.dao.HotelDao;
@@ -19,13 +20,19 @@ public class HotelController {
 	@RequestMapping("/")
 	public ModelAndView showHomePage() {
 	ModelAndView mav = new ModelAndView("index");
+//	List<Hotel> hotel = hotelDao.findAll();
+//	System.out.println(hotel);
 	return mav;
 	}
 	
 	@RequestMapping("/results")
-	public List<Hotel> showResults() {
-//		List<Hotel> hotel = hotelDao.findAll();	
-				return hotelDao.findAll();
+	public ModelAndView showResults(@RequestParam(value="city",required=false) String city){
+		List<Hotel> hotels = hotelDao.findAll();
+//		System.out.println(hotel);
+		ModelAndView mav = new ModelAndView( "results");
+		mav.addObject("hotels", hotels); 
+		return mav;
+		
 	}
 	
 	

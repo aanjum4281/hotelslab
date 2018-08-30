@@ -5,18 +5,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="hotel_listing")
 public class Hotel {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
+	
+	@Column(name="hotel_id")
 	private Long id;
-	@Column
+	@Column(name="hotel_name")
 	private String name;
-	@Column
+	@Column(name="city")
 	private String city;
-	@Column
+	@Column(name="price_per_night")
 	private Integer pricePerNight;
 	public Hotel() {
 		// TODO Auto-generated constructor stub
