@@ -14,7 +14,7 @@
             <p> ${hotels}</p>
             
 </c:foreach>
-
+ 
 
 </body>
 </html>
