@@ -26,8 +26,8 @@ public class HotelController {
 	}
 	
 	@RequestMapping("/results")
-	public ModelAndView showResults(@RequestParam(value="city",required=false) String city){
-		List<Hotel> hotels = hotelDao.findAll();
+	public ModelAndView showResults(@RequestParam("city") String city){
+		List<Hotel> hotels = hotelDao.findbyCity(city);
 //		System.out.println(hotel);
 		ModelAndView mav = new ModelAndView( "results");
 		mav.addObject("hotels", hotels); 
