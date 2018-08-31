@@ -11,7 +11,7 @@
 <h1>HERE ARE YOUR RESULTS</h1>
 <ol>
 <c:forEach var="hotel" items="${hotels}">
-       <li>      ${hotel.name}  ${hotel.city}  ${hotel.pricePerNight} </li>
+       <li>      ${hotel.name} in ${hotel.city}, Price per night is $${hotel.pricePerNight} </li>
             
 </c:forEach>
  </ol>
